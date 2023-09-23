@@ -14,7 +14,6 @@ local options = {
   ignorecase = true, -- ignore case in search patterns
   mouse = "a", -- allow the mouse to be used in neovim
   pumheight = 10, -- pop up menu height
-  showmode = false, -- we don't need to see things like -- INSERT -- anymore
   showtabline = 0, -- always show tabs
   smartcase = true, -- smart case
   smartindent = true, -- make indenting smarter again
@@ -40,23 +39,11 @@ local options = {
   wrap = false, -- display lines as one long line
   scrolloff = 0,
   sidescrolloff = 8,
-  guifont = "monospace:h17", -- the font used in graphical neovim applications
   title = true,
   titleold = vim.split(os.getenv "SHELL" or "", "/")[3],
   -- colorcolumn = "80",
-  -- colorcolumn = "120",
+  colorcolumn = "100",
 }
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
--- vim.opt.fillchars.eob = " "
--- vim.opt.fillchars = vim.opt.fillchars + "vertleft: "
--- vim.opt.fillchars = vim.opt.fillchars + "vertright: "
-vim.opt.fillchars = vim.opt.fillchars + "eob: "
-vim.opt.fillchars:append {
-  stl = " ",
-}
-
-vim.opt.shortmess:append "c"
 
 for k, v in pairs(options) do
   vim.opt[k] = v
